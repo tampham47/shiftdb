@@ -1,0 +1,27 @@
+{
+  "name": "shiftdb",
+  "description": "database at browser based on localStorage",
+  "version": "0.0.1",
+  "homepage": "http://github.com/tampham47/shiftdb",
+  "repository": "git://github.com/tampham47/shiftdb.git",
+  "author": "Tam Pham <tampham47@live.com> (http://wikiblack47.tumblr.com/)",
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul-coveralls": "^1.0.3",
+    "jshint": "^2.5.11",
+    "jshint-stylish": "^2.1.0",
+    "mochify": "dylanfm/mochify.js",
+    "mochify-istanbul": "^2.3.0",
+    "should": "^8.0.0"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "lint": "jshint index.js lib --exclude node_modules --config .jshintrc --reporter node_modules/jshint-stylish/index.js",
+    "test": "npm run-script lint && mochify --recursive --reporter spec",
+    "coveralls": "mochify --recursive --plugin [ mochify-istanbul --exclude '**/+(test|node_modules)/**/*' --report lcov --dir ./coverage ] && istanbul-coveralls"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "license": "MIT"
+}
